@@ -1,0 +1,109 @@
+*{
+    font-family: 'Roboto Mono', monospace;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("https://i.imgur.com/pUrhAdr.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    /*background-repeat: no-repeat;*/
+    background-size: 1920px;
+    height: 1080;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+    background-color: #000000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    outline: white solid;
+}
+
+.navbar a{
+    font-size: 16px;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown{
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    padding-top: 12px;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn{
+    background-color: black;
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),
+    0 17px 50px 0 rgba(183, 183, 183, 0.19);
+
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #222222;
+    z-index: 1;
+}
+
+.dropdown-content a{
+    float:none;
+    color: whitesmoke;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover{
+    background-color: none;
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),
+    0 17px 50px 0 rgba(183, 183, 183, 0.19);
+
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.LogIn h1{
+    color: white;
+}
+
+.LogIn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LogIn input{
+    padding-top: 15px;
+    background-color: none;
+}
+
+
+
