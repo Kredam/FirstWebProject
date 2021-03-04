@@ -1,1 +1,1 @@
-# First group web project 
+# School Group Project
