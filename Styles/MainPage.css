@@ -15,7 +15,6 @@ body{
 .pictures{
     display: flex;
     justify-content: center;
-    padding: px;
 }
 
 /*Start of the animations*/
