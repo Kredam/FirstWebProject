@@ -1,3 +1,4 @@
+/*Ez a váza ezt duplikald*/
 *{
     font-family: 'Roboto Mono', monospace;
 }
@@ -5,20 +6,25 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url("https://i.imgur.com/pUrhAdr.jpg");
+    background-image: url(../Pictures/backgroundweb.jpg);
     background-position: center;
     background-attachment: fixed;
-    /*background-repeat: no-repeat;*/
-    background-size: 1920px;
-    height: 1080;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+.pictures{
+    display: flex;
+    justify-content: center;
+}
+
+/*navigation bar start*/
 .navbar {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    overflow: hidden;
-    background-color: #000000;
+    overflow:hidden;
+    background-color: #ffffff7c; 
     list-style: none;
     margin: 0;
     padding: 0;
@@ -30,8 +36,10 @@ body{
     color: white;
     padding: 14px 16px;
     text-decoration: none;
+    text-shadow: 2px 2px 8px #6b6b6b;
 }
 
+/*dropdown start*/
 .dropdown{
     float: left;
     overflow: hidden;
@@ -49,9 +57,10 @@ body{
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn{
-    background-color: black;
-    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),
-    0 17px 50px 0 rgba(183, 183, 183, 0.19);
+    background-color: rgba(174, 246, 255, 0.753);
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.50),
+                0 17px 50px 0 rgba(183, 183, 183, 0.50);
+    transition: all 1s ease;
 
 }
 
@@ -60,7 +69,7 @@ body{
     position: absolute;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    background-color: #222222;
+    background-color: #ffffffc9;
     z-index: 1;
 }
 
@@ -76,34 +85,12 @@ body{
 .dropdown-content a:hover{
     background-color: none;
     box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),
-    0 17px 50px 0 rgba(183, 183, 183, 0.19);
+                0 17px 50px 0 rgba(183, 183, 183, 0.19);
 
 }
 
 .dropdown:hover .dropdown-content{
     display: block;
 }
-
-.LogIn h1{
-    color: white;
-}
-
-.LogIn{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-}
-
-.LogIn input{
-    padding-top: 15px;
-    background-color: none;
-}
-
 
 
