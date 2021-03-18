@@ -21,3 +21,26 @@ img{
 .masikmaradek{
 
 }
+
+@media screen and (max-width: 992px) {
+    div p{
+        color:pink;
+    }
+}
+
+.newspaper{
+    column-count: 4;
+}
+
+.pepsi{
+    position: absolute;
+    width:500px;
+    z-index: -1;
+}
+
+.hehe{
+    color:black;
+    font-size: 32px;
+    font-style: normal;
+    font-family: Arial;
+}
