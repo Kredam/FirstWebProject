@@ -5,7 +5,7 @@
     <title>Sign in | Bejelentkezés</title>
     <meta name="author" content="Kreidli Ádám">
     <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/0f/8b/28/0f8b2870896edcde8f6149fe2733faaf.jpg">
-    <link rel="stylesheet" href="../Styles/BlogLogReg.css">
+    <link rel="stylesheet" href="../Styles/Login.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3de6b5ab59.js" crossorigin="anonymous"></script>
@@ -18,23 +18,28 @@
             <i class="fas fa-chevron-down"></i>
         </Button>
             <div class="dropdown-content">
-                <a href="ComingSoon.html">..........</a>
-                <a href="ComingSoon.html">..........</a>
-                <a href="ComingSoon.html">..........</a>
+                <a href="Template.html">..........</a>
+                <a href="Template.html">..........</a>
+                <a href="Template.html">..........</a>
             </div>
         </div>
         <a href="LogIn.html">Log In</a>
-        <a href="ComingSoon.html">Media</a>
+        <a href="Gallery.html">Media</a>
 </div>
 
 <div class="LogIn">
-    <form action="Login.php">
-        <h1>Sign in</h1>
+    <img src="../Pictures/ProfileDefault.png" id="ProfilePic" width="132" height="132">
+    <h1>Sign in</h1>
+    <form action="LogIn.html" method="get">
+        <p><i class="far fa-user"></i></p>
         <input type="text" name="Username" placeholder="Username">
         <br>
-        <input type="password" name="Password" placeholder="Password">
+        <p><i class="fas fa-key"></i></p>
+        <input type="password" name="Password" placeholder="Password" required>
         <br>
-        <button type="button">Sign in</button>
+        <input type="checkbox" name="accept" id="Policy"><label for="Policy">Skankhunt43</label>
+        <br>
+        <input type="button" id="Buttons" name="Log In" value="Sign in">
     </form>
 </div>
 

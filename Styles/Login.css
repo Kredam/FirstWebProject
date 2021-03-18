@@ -91,3 +91,54 @@ body{
 .dropdown:hover .dropdown-content{
     display: block;
 }
+
+
+h1{
+    color: ghostwhite;
+    text-align: center;
+    border-bottom: 4px burlywood solid;
+    padding-bottom: 10px;
+}
+
+.LogIn{
+    width: 400px;
+    height: 500px;
+    top:27%;
+    left:43%;
+    position: absolute;
+    color: ghostwhite;
+    box-sizing: border-box;
+    padding: 10px 41px;
+    overflow: hidden;
+}
+
+.LogIn input{
+    border: none;
+    outline: none;
+    background: none;
+    color: ghostwhite;
+}
+
+.LogIn p{
+    border-bottom: ghostwhite solid;
+    padding-bottom: 2px;
+}
+
+.LogIn #Buttons{
+    font-size: 21px;
+    border: 2px solid white;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.LogIn #Buttons:hover{
+    background-color: red;
+    color: ghostwhite;
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(183, 183, 183, 0.19);
+}
+
+.LogIn #ProfilePic{
+    position: relative;
+    left: 30%;
+}

@@ -104,7 +104,8 @@ ul{
     letter-spacing: 5px;
     line-height: 36px;
     white-space: normal;
-    font-size: large
+    font-size: large;
+    font-weight: bold;
 }
 
 
