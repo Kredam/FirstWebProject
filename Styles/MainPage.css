@@ -253,29 +253,8 @@ body{
 }
 /*end of social media*/
 
-span{
-    opacity: 0;
-    transition: all 1s ease;
-    transform: translateY(50px);
-    display: inline-block; 
-}
-
-span.fade{
-    opacity: 1;
-    color: beige;
-    transform: translateY(0px);
-}
-
-label{
-    color: white;
-}
-
-.contactme{
-    padding-top: 100px;
-    padding-bottom: 100px;
+.desc{
     display: flex;
-    text-align: center;
-    font-size: large;
     justify-content: center;
-
+    color: white;
 }
