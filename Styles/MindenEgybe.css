@@ -1,3 +1,23 @@
 .korvonal{
     border:1px red solid;
 }
+
+.terkep{
+    border: 5px hotpink solid;
+}
+
+div p{
+    color:blue;
+}
+
+p[target="_blank"]{
+    text-decoration: underline;
+}
+
+img{
+    width:1300px;
+}
+
+.masikmaradek{
+
+}
