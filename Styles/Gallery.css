@@ -95,20 +95,19 @@ body{
 
 ul{
     position: static;
-    display: flex;
+    display: center;
     justify-content: space-evenly;
     top: 10%;
     left: 30%;
     list-style: none;
-}
-
-ul li p{
     text-align: center;
     letter-spacing: 5px;
     line-height: 36px;
-    white-space: normal
-    ;
+    white-space: normal;
+    font-size: large
 }
+
+
 
 
 
