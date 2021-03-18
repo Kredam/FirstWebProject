@@ -93,4 +93,9 @@ body{
     display: block;
 }
 
-
+.sajtoskifli{
+    font-size: 100px;
+    color:rosybrown;
+    text-decoration: underline;
+    font-style: italic;
+}
