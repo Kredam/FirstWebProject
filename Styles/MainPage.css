@@ -34,10 +34,6 @@ body{
     animation: monitor 1s ease;
 }
 
-#NightBackground{
-    animation: night 1s ease;
-    width: 100%;
-}
 
 @keyframes night{
     from{
@@ -86,6 +82,7 @@ body{
 }
 
 .navbar a{
+    position: sticky;
     font-size: 16px;
     color: white;
     padding: 14px 16px;
@@ -208,6 +205,7 @@ body{
 }
 
 .footer #hackerrank:hover{
+    border-radius: 50%;
     box-shadow: 0 12px 16px 0 rgba(34, 139, 34, 0.24),
     0 17px 50px 0 rgba(34, 139, 34, 0.19);
     font-size: 60px;
@@ -225,6 +223,7 @@ body{
     animation: descriptionanim 3s ease;
 }
 .footer #insta:hover{
+    border-radius: 50%;
     box-shadow: 0 12px 16px 0 rgba(255, 105, 180, 0.24),
     0 17px 50px 0 rgba(255, 105, 180, 0.19);
     font-size: 60px;
@@ -232,6 +231,7 @@ body{
 }
 
 .footer #github:hover{
+    border-radius: 50%;
     box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24),
     0 17px 50px 0 rgba(255, 255, 255, 0.19);
     font-size: 60px;
@@ -245,6 +245,7 @@ body{
 }
 
 .footer #face:hover, .footer #twitter:hover{
+    border-radius: 50%;
     box-shadow: 0 12px 16px 0 rgba(30, 144, 255, 0.24),
     0 17px 50px 0 rgba(30, 144, 255, 0.19);
     font-size: 60px;
