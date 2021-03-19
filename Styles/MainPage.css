@@ -68,11 +68,15 @@ body{
     }
 }
 
-/*navigation bar start*/
-.navbar {
+ul{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     justify-content: space-evenly;
+    list-style: none;
+}
+
+/*navigation bar start*/
+.navbar{
     overflow:hidden;
     background-color: #ffffff7c;
     list-style: none;
@@ -80,6 +84,7 @@ body{
     padding: 0;
     outline: white solid;
 }
+
 
 .navbar a{
     position: sticky;
@@ -104,7 +109,6 @@ body{
     background-color: inherit;
     font-family: inherit;
     margin: 0;
-    padding-top: 12px;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn{

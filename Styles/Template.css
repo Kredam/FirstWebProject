@@ -13,6 +13,13 @@ body{
     background-size: cover;
 }
 
+ul{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
 .pictures{
     display: flex;
     justify-content: center;
@@ -20,9 +27,6 @@ body{
 
 /*navigation bar start*/
 .navbar {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
     overflow:hidden;
     background-color: #ffffff7c; 
     list-style: none;

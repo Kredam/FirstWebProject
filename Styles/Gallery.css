@@ -18,11 +18,15 @@ body{
     justify-content: center;
 }
 
+.navbar-list{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
 /*navigation bar start*/
 .navbar {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
     overflow:hidden;
     background-color: #ffffff7c; 
     list-style: none;
