@@ -12,6 +12,19 @@ body{
     background-size: cover;
 }
 
+@media print {
+    p { 
+        font-size: 16px;
+    }
+    video, audio {
+        display: none;
+    }
+    h1,h2,h3{
+        page-break-after: avoid;
+    }
+}
+
+
 .pictures{
     display: flex;
     justify-content: center;
