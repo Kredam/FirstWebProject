@@ -21,14 +21,13 @@ h1{
     text-align: center;
     text-shadow: 5px 2px rgb(92, 40, 40);
     color: white;
-    animation: nameAnimtaion 0.8s ease-in 1s;
 }
 
 h2{
     padding:1px;
     text-align: center;
     text-shadow: 5px 2px rgb(92, 40, 40);
-    animation: threeDimensionAnim 2s ease-in-out;
+    animation: nameAnimtaion 2s ease-in-out;
     color: white;
 }
 
@@ -52,6 +51,10 @@ h1:hover::after{
     transform: scaleX(1);
 }
 
+h1:hover{
+    animation: threeDimensionAnim 2s ease-in-out;
+}
+
 .queen, .Slipknot{
     text-align: center;
     color: aliceblue;
@@ -59,13 +62,16 @@ h1:hover::after{
 
 @keyframes nameAnimtaion{
     from{
-        transform: translateY(50px);
-        opacity: 0;
+        transform: translateY(70px);
         
     } to {
-        opacity: 1;
         transform: translateY(0px);
     }
+}
+
+iframe{
+    padding: 1px;
+    margin: 1px;
 }
 
 .queen .container, .Slipknot .container{

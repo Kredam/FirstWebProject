@@ -1,0 +1,21 @@
+@media screen and (max-width: 992px) {
+    div p{
+        color:pink;
+    }
+}
+
+.audioPlayer{
+    display: flex;
+    justify-content: center;
+    position: relative;   
+}
+
+.audioPlayer ul li{
+    list-style: none;
+    text-align: center;
+    color: aliceblue;
+}
+
+img{
+    border-radius: 30%;
+}

@@ -25,12 +25,23 @@ body{
     }
 }
 
+@keyframes threeDimensionAnim{
+    from{
+        transform: rotate3d(0);
+    } to {
+        transform: rotate3d(1, 1, 0.5, -360deg);
+    }
+}
 
 .navbar ul{
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
     list-style: none;
+}
+
+.navbar ul li{
+   animation: threeDimensionAnim 1.6s ease-in-out;
 }
 
 .pictures{
@@ -82,6 +93,9 @@ body{
     transform: scaleX(1);
 }
 
+.navbar a:hover{
+    animation: threeDimeso
+}
 
 .dropdown-content{
     display: none;
@@ -111,11 +125,4 @@ body{
 
 .dropdown:hover .dropdown-content{
     display: block;
-}
-
-.sajtoskifli{
-    font-size: 100px;
-    color:rosybrown;
-    text-decoration: underline;
-    font-style: italic;
 }
