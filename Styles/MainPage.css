@@ -11,6 +11,7 @@
 }
 
 
+
 .pictures{
     display: flex;
     justify-content: center;
@@ -184,8 +185,4 @@ ul{
     display: flex;
     justify-content: center;
     color: white;
-}
-
-.felso{
-    position: fixed;
 }

@@ -19,6 +19,7 @@ h1{
     display: inline-block;
     padding:1px;
     text-align: center;
+    letter-spacing: 5px;
     text-shadow: 5px 2px rgb(92, 40, 40);
     color: white;
 }
@@ -26,6 +27,7 @@ h1{
 h2{
     padding:1px;
     text-align: center;
+    letter-spacing: 10px;
     text-shadow: 5px 2px rgb(92, 40, 40);
     animation: nameAnimtaion 2s ease-in-out;
     color: white;

@@ -30,7 +30,9 @@ h1{
     padding-bottom: 10px;
 }
 
-
+.header{
+    position: static;
+}
 
 .LogIn{
     width: 400px;
