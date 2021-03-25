@@ -15,3 +15,8 @@ ul li{
     text-align: center;
     list-style:none;
 }
+
+figcaption{
+    color: white;
+    text-align: center;
+}
