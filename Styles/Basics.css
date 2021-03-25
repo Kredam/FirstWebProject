@@ -12,6 +12,12 @@
     padding-bottom: 60px;
 }
 
+.GuitarParts{
+    padding-left: 10%;
+    padding-top: 15%;
+    float: left;
+}
+
 .audioPlayer{
     display: flex;
     justify-content: center;

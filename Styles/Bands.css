@@ -62,10 +62,10 @@ h1:hover{
 
 @keyframes nameAnimtaion{
     from{
-        transform: translateY(70px);
+        opacity: 0;
         
     } to {
-        transform: translateY(0px);
+        opacity: 1;
     }
 }
 
@@ -80,6 +80,7 @@ iframe{
     justify-content: space-evenly;
     list-style: none;
 }
+
 
 .Slipknot mark{
     background-color: red;
