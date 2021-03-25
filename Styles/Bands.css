@@ -10,17 +10,51 @@
     }
 }
 
-.queen{
-    text-align: center;
+a{
+    text-decoration: none;
     color: aliceblue;
 }
 
-
 h1{
+    display: inline-block;
+    padding:1px;
     text-align: center;
     text-shadow: 5px 2px rgb(92, 40, 40);
+    color: white;
     animation: nameAnimtaion 0.8s ease-in 1s;
+}
 
+h2{
+    padding:1px;
+    text-align: center;
+    text-shadow: 5px 2px rgb(92, 40, 40);
+    animation: threeDimensionAnim 2s ease-in-out;
+    color: white;
+}
+
+@keyframes threeDimensionAnim{
+    from{
+        transform: rotate3d(0);
+    } to {
+        transform: rotate3d(1, 1, 0.5, 360deg);
+    }
+}
+
+h1:after{
+    content: "";
+    display: block;
+    border-bottom:solid 5px white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+h1:hover::after{
+    transform: scaleX(1);
+}
+
+.queen, .Slipknot{
+    text-align: center;
+    color: aliceblue;
 }
 
 @keyframes nameAnimtaion{
@@ -34,11 +68,16 @@ h1{
     }
 }
 
-.queen .container{
+.queen .container, .Slipknot .container{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     list-style: none;
+}
+
+.Slipknot mark{
+    background-color: red;
+    color:white;
 }
 
 @media screen and (max-width: 500px){
