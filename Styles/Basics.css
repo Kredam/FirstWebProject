@@ -1,0 +1,38 @@
+@media screen and (max-width: 992px) {
+    div p{
+        color:pink;
+    }
+}
+
+.GuitarParts{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+.audioPlayer{
+    display: flex;
+    justify-content: center;
+    position: relative;   
+}
+
+.audioPlayer ul li{
+    list-style: none;
+    text-align: center;
+    color: aliceblue;
+    animation: swim 1s ease-in-out;
+}
+
+@keyframes swim{
+    from{
+        transform: translate3d(42px, -62px, -135px);
+    } to {
+        transform: translate3d(0);
+    }
+}
+
+.audioPlayer img{
+    border-radius: 30%;
+}

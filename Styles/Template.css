@@ -27,9 +27,9 @@ body{
 
 @keyframes threeDimensionAnim{
     from{
-        transform: rotate3d(0);
+        transform: translate3d(42px, 62px, -135px);
     } to {
-        transform: rotate3d(1, 1, 0.5, -360deg);
+        transform: translate3d(0);
     }
 }
 
@@ -41,7 +41,7 @@ body{
 }
 
 .navbar ul li{
-   animation: threeDimensionAnim 1.6s ease-in-out;
+   animation: threeDimensionAnim 0.6s ease-in-out;
 }
 
 .pictures{

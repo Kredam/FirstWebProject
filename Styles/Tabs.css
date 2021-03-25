@@ -1,0 +1,17 @@
+.Tabs, .chords{
+    display: flex;
+    justify-content: center;
+}
+
+.Tabs #intro{
+    color: green;
+}
+
+pre{
+    color: white;
+}
+
+ul li{
+    text-align: center;
+    list-style:none;
+}
