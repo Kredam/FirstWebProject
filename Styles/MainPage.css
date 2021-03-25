@@ -17,24 +17,22 @@
 }
 
 /*Start of the animations*/
-#Desk{
-    animation: monitor 1s ease;
+#Chair, #Guitar {
+    animation: guitar 1.5s ease;
 }
 
-#Monitor{
-    animation: monitor 1s ease;
+#Chords, #LeftLeg{
+    animation: chords 1s ease-in-out infinite alternate;
 }
 
-#MonitorScreen{
-    animation: monitortext 1s ease;
+#StrummingHands{
+    animation: playing 1s ease-in-out infinite alternate;
+}
+#Head{
+    animation: Head 1s ease-in-out infinite alternate;
 }
 
-#CoderMan{
-    animation: monitor 1s ease;
-}
-
-
-@keyframes night{
+@keyframes guitar{
     from{
         opacity: 0;
     } to {
@@ -42,28 +40,28 @@
     }
 }
 
-@keyframes monitor{
+@keyframes chords{
     from{
-        transform: translateY(70px);
+        transform: translateY(20px);
         
     } to {
         transform: translateY(0px);
     }
 }
 
-
-#MonitorText{
-    animation: monitortext 2s ease;
+@keyframes playing{
+    from{
+        transform: rotateZ(0deg);
+    } to {
+        transform: rotateZ(1deg);
+    }
 }
 
-@keyframes monitortext{
+@keyframes Head{
     from{
-        transform: translateY(70px);
-        opacity: 0;
-        
+        transform: rotateZ(0deg);
     } to {
-        transform: translateY(0px);
-        opacity: 1;
+        transform: rotateZ(0.5deg);
     }
 }
 
