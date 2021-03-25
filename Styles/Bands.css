@@ -83,7 +83,6 @@ iframe{
     list-style: none;
 }
 
-
 .Slipknot mark{
     background-color: red;
     color:white;
@@ -96,6 +95,17 @@ iframe{
     }
 }
 
+img{
+    border: solid 1px;
+}
 
+h2 + h2 { 
+    font-size: small;
+} 
+
+h2:last-of-type{
+    color: rgb(85, 84, 84);
+    text-decoration:underline dotted red;
+}
 
 
