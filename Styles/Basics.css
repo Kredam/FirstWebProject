@@ -42,3 +42,8 @@
 .audioPlayer img{
     border-radius: 30%;
 }
+
+.navbar {
+    background-color: gray;
+    opacity: 75%;
+}

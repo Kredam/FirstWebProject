@@ -108,4 +108,8 @@ h2:last-of-type{
     text-decoration:underline dotted red;
 }
 
+.navbar {
+    background-color: goldenrod;
+    opacity: 85%;
+}
 

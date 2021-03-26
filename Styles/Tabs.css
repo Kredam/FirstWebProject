@@ -24,3 +24,14 @@ figcaption{
 #Verse{
     text-align: center;
 }
+
+.navbar {
+    background-color: green;
+    opacity: 85%;
+}
+
+th, tr{
+    padding-right: 15px;
+    text-align: center;
+    color: white;
+}
