@@ -73,7 +73,9 @@ ul{
     list-style: none;
 }
 
-.description h1, p{
+.description h1, p, em, strong{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 5px;
     display: flex;
     justify-content: center;
     color: white;
@@ -181,8 +183,3 @@ ul{
 }
 /*end of social media*/
 
-.desc{
-    display: flex;
-    justify-content: center;
-    color: white;
-}

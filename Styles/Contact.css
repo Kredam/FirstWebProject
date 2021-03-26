@@ -86,3 +86,7 @@ h1{
     position: relative;
     left: 30%;
 }
+
+.navbar{
+    background-color: burlywood;
+}
