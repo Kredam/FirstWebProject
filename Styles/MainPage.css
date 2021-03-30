@@ -183,3 +183,6 @@ ul{
 }
 /*end of social media*/
 
+.navbar ul li .active{
+    border-bottom: 3px solid;
+}

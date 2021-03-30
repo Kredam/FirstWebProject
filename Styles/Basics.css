@@ -43,7 +43,6 @@
     border-radius: 30%;
 }
 
-.navbar {
-    background-color: gray;
-    opacity: 75%;
+.navbar ul li .active{
+    border-bottom: 3px solid;
 }

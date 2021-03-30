@@ -108,7 +108,6 @@ h2:last-of-type{
     text-decoration:underline dotted red;
 }
 
-.navbar {
-    background-color: goldenrod;
-    opacity: 85%d;
+.navbar ul li .active{
+    border-bottom: 3px solid;
 }

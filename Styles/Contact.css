@@ -87,6 +87,6 @@ h1{
     left: 30%;
 }
 
-.navbar{
-    background-color: burlywood;
+.navbar ul li .active{
+    border-bottom: 3px solid;
 }
