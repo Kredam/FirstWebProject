@@ -1,3 +1,3 @@
-# School Group Project(only HTML,CSS)
-# Website for a Guitar Tutor using 
-# Kreidli Adam, Gubacsi Zsolt
+# University Project(only HTML,CSS)
+# Personal Tutoring website
+# Kreidli Ádám, Gubacsi Zsolt
