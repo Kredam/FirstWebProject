@@ -17,25 +17,34 @@
 </div>
     <div class="navbar">
         <ul>
-            <li><a href="MainPage.html">Welcome</a></li>
+            <li><a href="../HTML/MainPage.html">Welcome</a></li>
             <li><div class="dropdown">
                 <Button class="dropbtn">Music Theory
                     <i class="fas fa-chevron-down"></i>
                 </Button>
                 <div class="dropdown-content">
-                    <a href="Basics.html">Basics</a>
-                    <a href="Tabs.html">Tab</a>
+                    <a href="../HTML/Basics.html">Basics</a>
+                    <a href="../HTML/Tabs.html">Tab</a>
                 </div>
             </div></li>
-            <li><a href="Contact.html" class="active">Contact Us</a></li>
-            <li> <a href="Bands.html">Bands</a></li>
+            <li><div class="dropdown">
+                <button class="dropbtn">Profile
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="Register.php" class="active">Register</a>
+                    <a href="SignIn.php">Sign In</a>
+                    <a href="Profile.php" >Profile</a>
+                </div>
+            </div></li>
+            <li> <a href="../HTML/Bands.html">Bands</a></li>
         </ul>
     </div>
 
 <div class="LogIn">
     <img src="../Pictures/ProfileDefault.png" alt="Login" id="ProfilePic" width="132" height="132">
     <h1>Sign in</h1>
-    <form action="LogIn.html" method="get">
+    <form action="Contact.html" method="GET">
         <p><i class="far fa-user"></i></p>
         <input type="text" name="Username" placeholder="Username">
         <br>
@@ -48,7 +57,7 @@
     </form>
 </div>
 <div class="urlap">
-    <form action="feldolgoz.php" method="POST" enctype="multipart/form-data">
+    <form action="Contact.php" method="POST" enctype="multipart/form-data">
         <fieldset>
           <legend>Regisztrációs adatok</legend>
           <label>Teljes név: <input type="text" name="full-name" size="25"/></label> <br/>
