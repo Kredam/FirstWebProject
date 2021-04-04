@@ -1,0 +1,108 @@
+@media print {
+    p { 
+        font-size: 16px;
+    }
+    video, audio {
+        display: none;
+    }
+    h1,h2,h3{
+        page-break-after: avoid;
+    }
+}
+
+
+.pictures{
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+h1{
+    color: ghostwhite;
+    text-align: center;
+    border-bottom: 4px burlywood solid;
+    padding-bottom: 10px;
+}
+
+p{
+    text-align: center;
+    font-size: 21px;
+    animation: hiba 2s ease-in-out infinite alternate;
+}
+
+@keyframes hiba{
+    from {
+        color: aliceblue;
+        opacity: 50%;
+    } to {
+        color: red;
+        opacity: 100%;
+    }
+}
+
+.header{
+    position: static;
+}
+
+.LogIn{
+    width: 400px;
+    height: 500px;
+    top:20%;
+    left:40%;
+    position: absolute;
+    color: ghostwhite;
+    box-sizing: border-box;
+    padding: 10px 41px;
+    overflow: hidden;
+}
+
+.urlap{
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.urlap form{
+    color: white;
+}
+
+.LogIn input{
+    border: none;
+    outline: none;
+    background: none;
+    color: ghostwhite;
+}
+
+.LogIn p{
+    border-bottom: ghostwhite solid;
+    padding-bottom: 2px;
+}
+
+.LogIn #Buttons{
+    font-size: 21px;
+    border: 2px solid white;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.LogIn #Buttons:hover{
+    background-color: red;
+    color: ghostwhite;
+    box-shadow: 0 12px 16px 0 rgba(255, 255, 255, 0.24), 0 17px 50px 0 rgba(183, 183, 183, 0.19);
+}
+
+.LogIn #ProfilePic{
+    position: relative;
+    left: 30%;
+}
+
+.navbar ul li .active{
+    border-bottom: 3px solid;
+}

@@ -1,3 +1,82 @@
+<?php
+    function loadUsers($path){
+        $users = [];
+        $file = fopen($path, "r");
+        if( $file === false ){
+            die("ERROR: open file");
+        }
+        while(($line = fgets($file)) !== false){
+            $unserialized_user = unserialize($line);
+            $users[] = $unserialized_user;
+
+        }
+        
+        fclose($file);
+        return $users;
+    }
+    function saveUsers($path, $users){
+        $file = fopen($path, "w");
+        if($file === false){
+            die("HIBA fájl megnyitása során");
+        }
+        foreach ($users as $user) {
+            $serialized_user = serialize($user);
+            fputs($file, $serialized_user . "\n");
+        }
+        fclose($file);
+    }
+    $fiokok = loadUsers(__DIR__ . '/../Admin/users.txt');
+    
+    $siker;
+    $hibak = [];
+    $name = $_POST["full-name"];
+    $username = $_POST["username"];
+    $sent = $_POST["submit-btn"];
+    $pswd = $_POST["passwd"];
+    $pswd2 = $_POST["passwd2"];
+    $eletkor = $_POST["age"];
+    $gender = $_POST["gender"];
+
+    /* Felhasznaló név ellenőrzése hogy üres-e */
+    if (isset($sent)) {
+        if (empty($name) && trim($name) === "") {
+            $hibak[] = "<strong>HIÁNYZIK:</strong> Teljes név!";
+        } 
+        if(empty($pswd) && trim($pswd) === "" || empty($pswd2) && trim($pswd2) === "" ){
+            $hibak[] = "<strong>HIÁNYZIK:</strong> Jelszó!";
+        }
+        if(empty($eletkor) && trim($eletkor) === ""){
+            $hibak[] = "<strong>HIÁNYZIK:</strong> Életkor!";
+        }
+        if(empty($gender)){
+            $hibak[] = "<strong>HIÁNYZIK:</strong> Neme!";
+        }
+        if(!preg_match('/[A-Za-z]/', $pswd) || !preg_match('/[0-9]/', $pswd)){
+            $hibak[] = "<strong>HIÁNYZIK</strong> betű vagy szám";
+        }
+        if (strlen($pswd) < 5) {
+            $hibak[] = "Rövid a jelszó(legalább 5 karakter)";
+        }
+        if ($pswd !== $pswd2) {
+            $hibak[] = "Jelszó nem egyezik";
+        }
+        if ($eletkor < 18) {
+            $hibak[] = "Túl fiatal";
+        }
+        if(count($hibak) === 0){
+            $fiokok[] = ["username" => $username, "password" => $pswd, "gender" => $gender, "age" => $eletkor];
+            saveUsers(__DIR__ . '/../Admin/users.txt', $fiokok);
+            header("Location: Sign.php");
+            global $siker;
+            $siker = true;
+        } else {
+            global $siker;
+            $siker = false;
+        }
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +84,7 @@
     <title>Sign in | Bejelentkezés</title>
     <meta name="author" content="Kreidli Ádám">
     <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/0f/8b/28/0f8b2870896edcde8f6149fe2733faaf.jpg">
-    <link rel="stylesheet" href="../Styles/Contact.css">
+    <link rel="stylesheet" href="../Styles/Register.css">
     <link rel="stylesheet" href="../Styles/Template.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -33,7 +112,7 @@
                 </button>
                 <div class="dropdown-content">
                     <a href="Register.php" class="active">Register</a>
-                    <a href="SignIn.php">Sign In</a>
+                    <a href="Sign.php">Sign In</a>
                     <a href="Profile.php" >Profile</a>
                 </div>
             </div></li>
@@ -41,31 +120,19 @@
         </ul>
     </div>
 
-<div class="LogIn">
-    <img src="../Pictures/ProfileDefault.png" alt="Login" id="ProfilePic" width="132" height="132">
-    <h1>Sign in</h1>
-    <form action="Contact.html" method="GET">
-        <p><i class="far fa-user"></i></p>
-        <input type="text" name="Username" placeholder="Username">
-        <br>
-        <p><i class="fas fa-key"></i></p>
-        <input type="password" name="Password" placeholder="Password" required>
-        <br>
-        <input type="checkbox" name="accept" id="Policy"><label for="Policy">Skankhunt43</label>
-        <br>
-        <input type="button" id="Buttons" name="Log In" value="Sign in">
-    </form>
-</div>
 <div class="urlap">
-    <form action="Contact.php" method="POST" enctype="multipart/form-data">
+    <form action="Register.php" method="POST" enctype="multipart/form-data">
         <fieldset>
           <legend>Regisztrációs adatok</legend>
           <label>Teljes név: <input type="text" name="full-name" size="25"/></label> <br/>
-          <label>Felhasználónév: <input type="text" name="username" required/></label> <br/>
-          <label>Jelszó: <input type="password" name="passwd" required/></label> <br/>
-          <label>Jelszó ismét: <input type="password" name="passwd-check" required/></label> <br/>
-          <label>Születési dátum: <input type="date" name="date-of-birth" min="1997-01-01"/></label> <br/>
-          <label>E-mail: <input type="email" name="email" required/></label> <br/>
+          <label>Felhasználónév: <input type="text" name="username" /></label> <br/>
+          <label>Jelszó: <input type="password" name="passwd" /></label> <br/>
+          <label>Jelszó ismét: <input type="password" name="passwd2" /></label> <br/>
+          <label>Eletkor<input type="number" name="age" value=""> </label><br>
+          <label>E-mail: <input type="email" name="email" /></label> <br/>
+          <input type="radio" name="gender" value="férfi">Férfi <br>
+          <input type="radio" name="gender" value="nő">Nő <br>
+          <input type="radio" name="gender" value="egyeb">Egyéb<br>
           <label>Felhasználói azonosító: <input type="number" name="user-id" value="1111" disabled/></label> <br/>
         </fieldset>
 
@@ -80,6 +147,15 @@
         <input type="submit" name="submit-btn" value="Adatok elküldése"/>
     </form>
 </div>
+    <?php 
+        if(isset($siker) && $siker===true){
+            echo "<p> sikeres </p>";
+        } else {
+            foreach ($hibak as $hiba) {
+                echo "<p>" . $hiba . "</p>";
+            }
+        }
+    ?>
 
 </body>
 </html>
