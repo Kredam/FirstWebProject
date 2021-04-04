@@ -1,3 +1,3 @@
-# University Project(only HTML,CSS)
+# University Project(only HTML, CSS, PHP)
 # Personal Tutoring website
 # Kreidli Ádám, Gubacsi Zsolt
