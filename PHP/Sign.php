@@ -1,19 +1,6 @@
 <?php
-    function loadUsers($path){
-        $users = [];
-        $file = fopen($path, "r");
-        if( $file === false ){
-            die("ERROR: open file");
-        }
-        while(($line = fgets($file)) !== false){
-            $unserialized_user = unserialize($line);
-            $users[] = $unserialized_user;
-
-        }
-        
-        fclose($file);
-        return $users;
-    }
+    session_start();
+    include "File.php";
     $users = loadUsers(__DIR__ . '/../Admin/users.txt');
     //print_r($users);die;
 
@@ -34,6 +21,7 @@
             $siker = true;
             foreach ($users as $user) {
             if($user["username"] === $username && $user["password"] === $password){
+                $_SESSION["user"] = $user;
                 header("Location: Profile.php");
                 break;
             } else {
@@ -54,8 +42,12 @@
     <title>Sign in | Bejelentkezés</title>
     <meta name="author" content="Kreidli Ádám">
     <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/0f/8b/28/0f8b2870896edcde8f6149fe2733faaf.jpg">
-    <link rel="stylesheet" href="../Styles/Sign.css">
-    <link rel="stylesheet" href="../Styles/Template.css">
+    <style>
+        <?php
+            include '../Styles/Sign.css';
+            include '../Styles/Template.css';
+        ?>
+    </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3de6b5ab59.js" crossorigin="anonymous"></script>
@@ -64,7 +56,7 @@
     <div class="header">
         <h1>Contact me for tutoring information</h1>
 </div>
-    <div class="navbar">
+<div class="navbar">
         <ul>
             <li><a href="../HTML/MainPage.html">Welcome</a></li>
             <li><div class="dropdown">
@@ -81,9 +73,13 @@
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="Register.php" >Register</a>
-                    <a href="SignIn.php" class="active">Sign in</a>
+                <?php if (isset($_SESSION["user"])){?>
                     <a href="Profile.php" >Profile</a>
+                    <a href="Logout.php">Log out</a>
+                <?php } else { ?>
+                    <a href="Register.php" >Register</a>
+                    <a href="Sign.php" class="active">Sign in</a>
+                <?php } ?>
                 </div>
             </div></li>
             <li> <a href="../HTML/Bands.html">Bands</a></li>
@@ -101,6 +97,8 @@
         <input type="password" name="Password" placeholder="Password">
         <br>
         <input type="checkbox" name="accept" id="Policy"><label for="Policy">Skankhunt43</label>
+        <br>
+        <a href="Forget.php">Forget Password or username</a>
         <br>
         <input type="submit" id="Buttons" name="submit" value="Sign in">
     </form>

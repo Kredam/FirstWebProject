@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(empty($_SESSION["user"])){
+        header("Location: Sign.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +11,18 @@
     <title>Sign in | Bejelentkezés</title>
     <meta name="author" content="Kreidli Ádám">
     <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/0f/8b/28/0f8b2870896edcde8f6149fe2733faaf.jpg">
-    <link rel="stylesheet" href="../Styles/Basics.css">
-    <link rel="stylesheet" href="../Styles/Template.css">
+    <style>
+        <?php
+            include '../Styles/Profile.css';
+            include '../Styles/Template.css';
+        ?>
+    </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3de6b5ab59.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="navbar">
+<div class="navbar">
         <ul>
             <li><a href="../HTML/MainPage.html">Welcome</a></li>
             <li><div class="dropdown">
@@ -29,14 +39,28 @@
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="../PHP/Register.php" >Register</a>
-                    <a href="../PHP/Sign.php">Sign In</a>
-                    <a href="../PHP/Profile.php" class="active">Profile</a>
+                <?php if (isset($_SESSION["user"])){?>
+                    <a href="Profile.php" >Profile</a>
+                    <a href="Logout.php">Log out</a>
+                <?php } else { ?>
+                    <a href="Register.php" >Register</a>
+                    <a href="Sign.php" class="active">Sign in</a>
+                <?php } ?>
                 </div>
             </div></li>
             <li> <a href="../HTML/Bands.html">Bands</a></li>
         </ul>
     </div>
+
+    <?php
+          echo "<ul>";
+          echo "<li>Felhasználónév: " . $_SESSION["user"]["username"] . "</li>";
+          echo "<li>Életkor: " . $_SESSION["user"]["email"] . "</li>";
+          echo "<li>Nem: " . $_SESSION["user"]["gender"] . "</li>";
+          echo "<li>Hobbik: " . implode(", ", $_SESSION["user"]["age"]) . "</li>";
+          echo "<li>Level of Knowledge:" . implode(", ", $_SESSION["user"]["level"]) . "</li>";
+          echo "</ul>";
+    ?>
 
 </body>
 </html>

@@ -1,30 +1,6 @@
 <?php
-    function loadUsers($path){
-        $users = [];
-        $file = fopen($path, "r");
-        if( $file === false ){
-            die("ERROR: open file");
-        }
-        while(($line = fgets($file)) !== false){
-            $unserialized_user = unserialize($line);
-            $users[] = $unserialized_user;
-
-        }
-        
-        fclose($file);
-        return $users;
-    }
-    function saveUsers($path, $users){
-        $file = fopen($path, "w");
-        if($file === false){
-            die("HIBA fájl megnyitása során");
-        }
-        foreach ($users as $user) {
-            $serialized_user = serialize($user);
-            fputs($file, $serialized_user . "\n");
-        }
-        fclose($file);
-    }
+    session_start();
+    include "File.php";
     $fiokok = loadUsers(__DIR__ . '/../Admin/users.txt');
     
     $siker;
@@ -33,8 +9,10 @@
     $username = $_POST["username"];
     $sent = $_POST["submit-btn"];
     $pswd = $_POST["passwd"];
+    $email = $_POST["email"];
     $pswd2 = $_POST["passwd2"];
     $eletkor = $_POST["age"];
+    $level = ["level"];
     $gender = $_POST["gender"];
 
     /* Felhasznaló név ellenőrzése hogy üres-e */
@@ -51,6 +29,11 @@
         if(empty($gender)){
             $hibak[] = "<strong>HIÁNYZIK:</strong> Neme!";
         }
+        foreach($fiokok as $fiok){
+            if($fiok["username"] === $username){
+                $hibak[] = "Foglalt felhasználónév";
+            }
+        }
         if(!preg_match('/[A-Za-z]/', $pswd) || !preg_match('/[0-9]/', $pswd)){
             $hibak[] = "<strong>HIÁNYZIK</strong> betű vagy szám";
         }
@@ -64,7 +47,12 @@
             $hibak[] = "Túl fiatal";
         }
         if(count($hibak) === 0){
-            $fiokok[] = ["username" => $username, "password" => $pswd, "gender" => $gender, "age" => $eletkor];
+            $fiokok[] = ["username" => $username, 
+                         "password" => $pswd, 
+                         "email" => $email , 
+                         "gender" => $gender, 
+                         "age" => $eletkor,
+                         "level" => $level];
             saveUsers(__DIR__ . '/../Admin/users.txt', $fiokok);
             header("Location: Sign.php");
             global $siker;
@@ -84,8 +72,12 @@
     <title>Sign in | Bejelentkezés</title>
     <meta name="author" content="Kreidli Ádám">
     <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/0f/8b/28/0f8b2870896edcde8f6149fe2733faaf.jpg">
-    <link rel="stylesheet" href="../Styles/Register.css">
-    <link rel="stylesheet" href="../Styles/Template.css">
+    <style>
+        <?php
+            include '../Styles/Register.css';
+            include '../Styles/Template.css';
+        ?>
+    </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3de6b5ab59.js" crossorigin="anonymous"></script>
@@ -94,7 +86,7 @@
     <div class="header">
         <h1>Contact me for tutoring information</h1>
 </div>
-    <div class="navbar">
+<div class="navbar">
         <ul>
             <li><a href="../HTML/MainPage.html">Welcome</a></li>
             <li><div class="dropdown">
@@ -111,9 +103,13 @@
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="Register.php" class="active">Register</a>
-                    <a href="Sign.php">Sign In</a>
+                <?php if (isset($_SESSION["user"])){?>
                     <a href="Profile.php" >Profile</a>
+                    <a href="Logout.php">Log out</a>
+                <?php } else { ?>
+                    <a href="Register.php" >Register</a>
+                    <a href="Sign.php" class="active">Sign in</a>
+                <?php } ?>
                 </div>
             </div></li>
             <li> <a href="../HTML/Bands.html">Bands</a></li>
@@ -137,7 +133,7 @@
         </fieldset>
 
         <label for="education">Milyen szinten vagy?</label>
-        <select id="education">
+        <select id="education" name="level">
           <option>Beginner</option>
           <option>Intermediate(campfire guitarist)</option>
           <option>Pro</option>
