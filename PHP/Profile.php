@@ -51,14 +51,19 @@
             <li> <a href="../HTML/Bands.html">Bands</a></li>
         </ul>
     </div>
-
+    <div class="file-upload-form">
+            <form action="Profile.php" mehtod="POST" enctype="multipart/form-data">
+                    <input type="file" id="file-upload" name="profile-pic" accept="image/*"/>
+                    <input type="submit" name="upload-button" value="upload"/>
+            </form>
+    </div>
     <?php
           echo "<ul>";
           echo "<li>Felhasználónév: " . $_SESSION["user"]["username"] . "</li>";
           echo "<li>Életkor: " . $_SESSION["user"]["email"] . "</li>";
           echo "<li>Nem: " . $_SESSION["user"]["gender"] . "</li>";
           echo "<li>Hobbik: " . implode(", ", $_SESSION["user"]["age"]) . "</li>";
-          echo "<li>Level of Knowledge:" . implode(", ", $_SESSION["user"]["level"]) . "</li>";
+          echo "<li>Level of Knowledge:" . $_SESSION["user"]["knowledge"] . "</li>";
           echo "</ul>";
     ?>
 

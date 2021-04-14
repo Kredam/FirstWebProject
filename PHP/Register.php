@@ -2,6 +2,10 @@
     session_start();
     include "File.php";
     $fiokok = loadUsers(__DIR__ . '/../Admin/users.txt');
+
+    if(isset($_SESSION["user"])){
+        header("Location: Profile.php");
+    }
     
     $siker;
     $hibak = [];
@@ -12,7 +16,7 @@
     $email = $_POST["email"];
     $pswd2 = $_POST["passwd2"];
     $eletkor = $_POST["age"];
-    $level = ["level"];
+    $level = $_POST["level"];
     $gender = $_POST["gender"];
 
     /* Felhasznaló név ellenőrzése hogy üres-e */
@@ -52,7 +56,7 @@
                          "email" => $email , 
                          "gender" => $gender, 
                          "age" => $eletkor,
-                         "level" => $level];
+                         "knowledge" => $level];
             saveUsers(__DIR__ . '/../Admin/users.txt', $fiokok);
             header("Location: Sign.php");
             global $siker;
@@ -143,9 +147,10 @@
         <input type="submit" name="submit-btn" value="Adatok elküldése"/>
     </form>
 </div>
-    <?php 
+    <?php
         if(isset($siker) && $siker===true){
             echo "<p> sikeres </p>";
+           
         } else {
             foreach ($hibak as $hiba) {
                 echo "<p>" . $hiba . "</p>";

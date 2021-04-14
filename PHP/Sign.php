@@ -8,6 +8,10 @@
     $password = $_POST["Password"];
     $login = $_POST["submit"];
 
+    if(isset($_SESSION["user"])){
+        header("Location: Profile.php");
+    }
+
     $uzenet = "";
     $hibak = [];
     if(isset($login)){
