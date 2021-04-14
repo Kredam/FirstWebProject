@@ -7,8 +7,6 @@
 
 if( $_FILES["profile-pic"]["type"] == "image/jpeg" or $_FILES["profile-pic"]["type"] == "image/png")
 {
-    move_uploaded_file($_FILES["profile-pic"]["tmp_name"] , "../Pictures/".$_POST["gallery"]."/".$_FILES["profile-pic"]["name"]);
-    header("Location:index.php?pics=".$_POST["gallery"]);
+    move_uploaded_file($_FILES["profile-pic"]["tmp_name"] , "../Pictures/".$_FILES["profile-pic"]["name"]);
 }
-else header("Location:index.php?err=1&err=1&pics=".$_POST["gallery"]);
 ?>
