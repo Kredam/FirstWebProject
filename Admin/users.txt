@@ -1,1 +1,2 @@
 a:5:{s:8:"username";s:6:"edem46";s:8:"password";s:8:"Kreidli8";s:5:"email";s:22:"akitlosz2000@gmail.com";s:6:"gender";s:6:"férfi";s:3:"age";s:2:"21";}
+a:6:{s:8:"username";s:6:"gzsoci";s:8:"password";s:9:"zsolt0412";s:5:"email";s:20:"gubizsolti@gmail.com";s:6:"gender";s:6:"férfi";s:3:"age";s:2:"20";s:9:"knowledge";s:8:"Beginner";}

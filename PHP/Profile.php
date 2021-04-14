@@ -52,8 +52,9 @@
         </ul>
     </div>
     <div class="file-upload-form">
-            <form action="Profile.php" mehtod="POST" enctype="multipart/form-data">
+            <form action="PicUpload.php" method="POST" enctype="multipart/form-data">
                     <input type="file" id="file-upload" name="profile-pic" accept="image/*"/>
+                    <input type="hidden" name="gallery" value="<?php print $_GET["pics"] ?>">
                     <input type="submit" name="upload-button" value="upload"/>
             </form>
     </div>
