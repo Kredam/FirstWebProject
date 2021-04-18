@@ -62,7 +62,7 @@
 </div>
 <div class="navbar">
         <ul>
-            <li><a href="../HTML/MainPage.html">Welcome</a></li>
+            <li><a href="../index.html">Welcome</a></li>
             <li><div class="dropdown">
                 <Button class="dropbtn">Music Theory
                     <i class="fas fa-chevron-down"></i>

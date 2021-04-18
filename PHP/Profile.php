@@ -3,6 +3,15 @@
     if(empty($_SESSION["user"])){
         header("Location: Sign.php");
     }
+
+    $a=$_POST["a"];
+    $b=$_POST["b"];
+    $c = 0;
+    $submitted = $_POST["submit"];
+    if(isset($submitted)){
+            global $c;
+            $c=sqrt(($a*$a)+($b*$b));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +33,7 @@
 <body>
 <div class="navbar">
         <ul>
-            <li><a href="../HTML/MainPage.html">Welcome</a></li>
+            <li><a href="../index.html">Welcome</a></li>
             <li><div class="dropdown">
                 <Button class="dropbtn">Music Theory
                     <i class="fas fa-chevron-down"></i>
@@ -57,15 +66,22 @@
                     <input type="submit" name="upload-button" value="upload"/>
             </form>
     </div>
+    <div class="complex_calculation">
+    <form action="Profile.php" method="POST">
+        <label>Hypotenuse Calculation</label>
+        <input type="number" name="a">
+        <input type="number" name="b">
+        <input type="submit" name="submit">
+    </form>
+    </div>
     <?php
+          echo "<p> The result is: " . $c . "</p>";
           echo "<ul>";
           echo "<li>Felhasználónév: " . $_SESSION["user"]["username"] . "</li>";
           echo "<li>Életkor: " . $_SESSION["user"]["email"] . "</li>";
           echo "<li>Nem: " . $_SESSION["user"]["gender"] . "</li>";
-          echo "<li>Hobbik: " . implode(", ", $_SESSION["user"]["age"]) . "</li>";
           echo "<li>Level of Knowledge:" . $_SESSION["user"]["knowledge"] . "</li>";
           echo "</ul>";
     ?>
-
 </body>
 </html>

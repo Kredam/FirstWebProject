@@ -16,7 +16,7 @@
     $email = $_POST["email"];
     $pswd2 = $_POST["passwd2"];
     $eletkor = $_POST["age"];
-    $level = $_POST["level"];
+    $knowledge = $_POST["knowledge"];
     $gender = $_POST["gender"];
 
     /* Felhasznaló név ellenőrzése hogy üres-e */
@@ -56,7 +56,7 @@
                          "email" => $email , 
                          "gender" => $gender, 
                          "age" => $eletkor,
-                         "knowledge" => $level];
+                         "knowledge" => $knowledge];
             saveUsers(__DIR__ . '/../Admin/users.txt', $fiokok);
             header("Location: Sign.php");
             global $siker;
@@ -92,7 +92,7 @@
 </div>
 <div class="navbar">
         <ul>
-            <li><a href="../HTML/MainPage.html">Welcome</a></li>
+            <li><a href="../index.html">Welcome</a></li>
             <li><div class="dropdown">
                 <Button class="dropbtn">Music Theory
                     <i class="fas fa-chevron-down"></i>
@@ -137,7 +137,7 @@
         </fieldset>
 
         <label for="education">Milyen szinten vagy?</label>
-        <select id="education" name="level">
+        <select id="education" name="knowledge">
           <option>Beginner</option>
           <option>Intermediate(campfire guitarist)</option>
           <option>Pro</option>
