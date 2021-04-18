@@ -126,7 +126,7 @@
           <legend>Regisztrációs adatok</legend>
           <label>Teljes név: <input type="text" name="full-name" size="25"/></label> <br/>
           <label>Felhasználónév: <input type="text" name="username" /></label> <br/>
-          <label>Jelszó: <input type="password" name="passwd" /></label> <br/>
+          <label>Jelszó(5 karakter(betű és szám) minimum): <input type="password" name="passwd" /></label> <br/>
           <label>Jelszó ismét: <input type="password" name="passwd2" /></label> <br/>
           <label>Eletkor<input type="number" name="age" value=""> </label><br>
           <label>E-mail: <input type="email" name="email" /></label> <br/>

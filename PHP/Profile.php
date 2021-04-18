@@ -75,6 +75,7 @@
     </form>
     </div>
     <?php
+          echo "Today is " . date("Y/m/d") . "<br>";
           echo "<p> The result is: " . $c . "</p>";
           echo "<ul>";
           echo "<li>Felhasználónév: " . $_SESSION["user"]["username"] . "</li>";
