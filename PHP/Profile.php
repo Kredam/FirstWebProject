@@ -12,6 +12,7 @@
             global $c;
             $c=sqrt(($a*$a)+($b*$b));
     }
+    error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">

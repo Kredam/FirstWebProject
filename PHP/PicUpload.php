@@ -8,4 +8,6 @@ if( $_FILES["profile-pic"]["type"] == "image/jpeg" or $_FILES["profile-pic"]["ty
 else{
     echo "A fájl feltöltés nem sikerült!";
 }
+error_reporting(0);
+
 ?>

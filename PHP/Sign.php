@@ -7,39 +7,31 @@
     $username = $_POST["Username"];
     $password = $_POST["Password"];
     $login = $_POST["submit"];
-
+    $uzenet = "";
     if(isset($_SESSION["user"])){
         header("Location: Profile.php");
     }
 
-    $uzenet = "";
-    $hibak = [];
     if(isset($login)){
-        if(empty($username) || trim($username) === "" ){
-            $hibak[] = "Missing username";
-        }
-        if(empty($password) || trim($password) === ""){
-            $hibak[] = "MIssing Password";
-        }
-        if(count($hibak) === 0){
-            $siker = true;
+        if(empty($username) || trim($username) === "" || empty($password) || trim($password) === ""){
+            global $uzenet;
+            $uzenet= "Missing username or password";
+        }else{
+            global $uzenet;
+            $uzenet= "Wrong username or password";
+
             foreach ($users as $user) {
-            if($user["username"] === $username && $user["password"] === $password){
-                $_SESSION["user"] = $user;
-                header("Location: Profile.php");
-                break;
-            } else {
-                $uzenet = "Wrong username or password";
+                if($user["username"] === $username && $user["password"] === $password){
+                    $_SESSION["user"] = $user;
+                    header("Location: Profile.php");
+                    break;
+                }
             }
         }
-    
-        } else {
-            $siker = false;
-        }
     }
-
+    error_reporting(0);
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -65,7 +57,6 @@
             <li><a href="../index.html">Welcome</a></li>
             <li><div class="dropdown">
                 <Button class="dropbtn">Music Theory
-                    <i class="fas fa-chevron-down"></i>
                 </Button>
                 <div class="dropdown-content">
                     <a href="../HTML/Basics.html">Basics</a>
@@ -74,7 +65,6 @@
             </div></li>
             <li><div class="dropdown">
                 <button class="dropbtn">Profile
-                    <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-content">
                 <?php if (isset($_SESSION["user"])){?>
@@ -94,10 +84,10 @@
     <img src="../Pictures/ProfileDefault.png" alt="Login" id="ProfilePic" width="132" height="132">
     <h1>Sign in</h1>
     <form action="Sign.php" method="POST">
-        <p class="symbol"><i class="far fa-user"></i></p>
+        <p class="symbol"></p>
         <input type="text" name="Username" placeholder="Username">
         <br>
-        <p class="symbol"><i class="fas fa-key"></i></p>
+        <p class="symbol"></p>
         <input type="password" name="Password" placeholder="Password">
         <br>
         <input type="checkbox" name="accept" id="Policy"><label for="Policy">Skankhunt43</label>
@@ -107,8 +97,10 @@
         <input type="submit" id="Buttons" name="submit" value="Sign in">
     </form>
 </div>
+<div class="warning">
     <?php
-        
+        echo "<p>" . $uzenet . "</p>";
     ?>
+</div>
 </body>
 </html>

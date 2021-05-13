@@ -66,14 +66,14 @@
             $siker = false;
         }
     }
-    
+    error_reporting(0);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign in | Bejelentkezés</title>
+    <title> Register | Regisztrálás</title>
     <meta name="author" content="Kreidli Ádám">
     <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/0f/8b/28/0f8b2870896edcde8f6149fe2733faaf.jpg">
     <style>
@@ -89,13 +89,12 @@
 <body>
     <div class="header">
         <h1>Contact me for tutoring information</h1>
-</div>
+    </div>
 <div class="navbar">
         <ul>
             <li><a href="../index.html">Welcome</a></li>
             <li><div class="dropdown">
                 <Button class="dropbtn">Music Theory
-                    <i class="fas fa-chevron-down"></i>
                 </Button>
                 <div class="dropdown-content">
                     <a href="../HTML/Basics.html">Basics</a>
@@ -104,7 +103,6 @@
             </div></li>
             <li><div class="dropdown">
                 <button class="dropbtn">Profile
-                    <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-content">
                 <?php if (isset($_SESSION["user"])){?>
@@ -146,7 +144,6 @@
         <input type="reset" name="reset-btn" value="Adatok törlése"/>
         <input type="submit" name="submit-btn" value="Adatok elküldése"/>
     </form>
-</div>
     <?php
         if(isset($siker) && $siker===true){
             echo "<p> sikeres </p>";
@@ -157,6 +154,7 @@
             }
         }
     ?>
+</div>
 
 </body>
 </html>

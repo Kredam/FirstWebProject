@@ -25,4 +25,6 @@
         }
         fclose($file);
     }  
+    error_reporting(0);
+
 ?>
